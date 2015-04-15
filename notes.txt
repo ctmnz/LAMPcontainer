@@ -1,0 +1,8 @@
+
+## enable port 80
+firewall-cmd --permanent --add-port=80/tcp
+
+## add to /etc/ssh/ssh_config 
+StrictHostKeyChecking no
+
+

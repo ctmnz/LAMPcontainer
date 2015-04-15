@@ -1,0 +1,2 @@
+Use this commad to get all your php modules from the machine that you are copying/containerizate
+yum list -v installed |grep php > php.modules

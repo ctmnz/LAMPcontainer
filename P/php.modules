@@ -1,0 +1,23 @@
+## GET the list in production with command:
+## yum list -v installed |grep php > php.modules
+## used by container installer: 
+## cat php.modules |grep -v ^# |awk {'print $1'} | cut -d'.' -f1
+php.i386                                 5.1.6-45.el5_11               installed
+php-cli.i386                             5.1.6-45.el5_11               installed
+php-common.i386                          5.1.6-45.el5_11               installed
+php-devel.i386                           5.1.6-45.el5_11               installed
+php-gd.i386                              5.1.6-45.el5_11               installed
+php-ldap.i386                            5.1.6-45.el5_11               installed
+php-mbstring.i386                        5.1.6-45.el5_11               installed
+php-mcrypt.i386                          5.1.6-15.el5.centos.1         installed
+php-mysql.i386                           5.1.6-45.el5_11               installed
+php-pdo.i386                             5.1.6-45.el5_11               installed
+php-pear.noarch                          1:1.4.9-8.el5                 installed
+php-soap.i386                            5.1.6-45.el5_11               installed
+php-xml.i386                             5.1.6-45.el5_11               installed
+php-pecl-memcached
+php-bcmath.x86_64                  5.3.3-26.el6                       @base
+php-devel.x86_64                   5.3.3-26.el6                       @base
+php-php-gettext.noarch             1.0.11-3.el6                       @epel
+php-soap.x86_64                    5.3.3-26.el6                       @base
+

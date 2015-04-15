@@ -1,0 +1,2 @@
+Put all .sql files here
+They will be imported in the installation process
