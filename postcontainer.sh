@@ -47,7 +47,7 @@ for f in $FILES
 do
  echo "Inserting $f into mysql"
  echo " ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql < $f"
- ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql < $f
+ ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql --max_allowed_packet=1024M < $f
 done
 
 echo "flush privileges;" | ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql
