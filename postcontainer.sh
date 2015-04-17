@@ -42,12 +42,18 @@ echo "systemctl restart memcached" | ssh -i .ssh/$container_name localhost -p $c
 
 echo "flush privileges;" | ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql
 
+
+
+### little durty hack to make db importing posible TODO:// must fix it
+echo "SET GLOBAL wait_timeout=300000; SET GLOBAL interactive_timeout=300000; SET GLOBAL  max_allowed_packet=124000000000;" | ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql
+
+
 FILES=./M/*.sql
 for f in $FILES
 do
  echo "Inserting $f into mysql"
  echo " ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql < $f"
- ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql --max_allowed_packet=1024M < $f
+ ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql < $f
 done
 
 echo "flush privileges;" | ssh -i .ssh/$container_name localhost -p $container_sshd_port mysql
